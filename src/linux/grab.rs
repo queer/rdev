@@ -301,7 +301,7 @@ fn evdev_event_to_rdev_event(
 //     }
 // }
 
-pub fn grab<T>(callback: T) -> Result<(), GrabError>
+pub fn grab<T>(mut callback: T) -> Result<(), GrabError>
 where
     T: FnMut(Event) -> Option<Event> + 'static,
 {
